@@ -1,0 +1,146 @@
+body {
+  height: 220vh;
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+.hero {
+  background-image: url("../utils/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 110vh;
+  margin-top: -80px;
+  width: 100%;
+  position: relative;
+}
+
+.back {
+  margin-top: -80px;
+}
+main {
+  color: #b8b8b8;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.desc {
+  max-width: 1000px;
+  font-size: clamp(10px, 15px, 20px);
+  line-height: 45px;
+  place-self: center;
+  margin-top: 5vh;
+}
+
+.cardsContainer {
+  margin: 5rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  max-width: 700px;
+  height: 570px;
+  background: rgba(37, 37, 37, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px 15px rgba(74, 222, 128, 0.15);
+}
+
+.image {
+  flex: 0 0 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image img {
+  transform: scale(1.05);
+}
+
+.image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 70%,
+    rgba(1, 39, 4, 0.39) 100%
+  );
+}
+
+.text {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  color: #4ade80;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: #4ade80;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.card:hover h2::after {
+  width: 75%;
+}
+.card:first-child:hover h2::after {
+  width: 65%;
+}
+.card:nth-child(2):hover h2::after {
+  width: 82%;
+}
+
+p {
+  color: #bbbbbb;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+.tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #008812, #00cc44);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 136, 18, 0.3);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-top: 15px;
+  align-self: flex-start;
+}
